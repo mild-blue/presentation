@@ -26,3 +26,17 @@ Want to create your presentation using a visual editor? Try the official reveal.
 MIT licensed
 
 Copyright (C) 2011-2020 Hakim El Hattab, https://hakim.se
+
+# Mild-Blue Setup
+
+## Reveal Installation
+
+1. Execute `npm run isntall`.
+
+You can start server via `npm run start`.
+
+## Mild-blue Folder
+
+This folder contains markdowns for presentations.
+
+TODO
