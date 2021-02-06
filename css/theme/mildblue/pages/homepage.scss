@@ -1,0 +1,57 @@
+.homepage {
+  background: $dark-blue;
+  color: $white;
+  padding: 30px;
+  height: 100vh;
+
+  h1, h2 {
+    font-family: "Archia", sans-serif;
+    font-weight: 900;
+  }
+
+  h1 {
+    font-size: 42px;
+    margin-bottom: 30px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    li {
+      flex: 1;
+      flex-basis: 50%;
+      width: 50%;
+    }
+
+    a {
+      color: $white;
+      background-color: rgba($white, 0.15);
+      border-radius: 6px;
+      border: 1px solid rgba($white, 0.3);
+      margin: 30px;
+      padding: 30px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      text-decoration: none;
+
+      transition: background-color 0.2s ease-out;
+
+      &:hover {
+        background-color: rgba($white, 0.3);
+      }
+    }
+  }
+}
+

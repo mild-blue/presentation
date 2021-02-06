@@ -35,6 +35,85 @@
   font-weight: 700;
   font-style: normal; }
 
+.homepage {
+  background: #11205E;
+  color: #ffffff;
+  padding: 30px;
+  height: 100vh; }
+  .homepage h1, .homepage h2 {
+    font-family: "Archia", sans-serif;
+    font-weight: 900; }
+  .homepage h1 {
+    font-size: 42px;
+    margin-bottom: 30px; }
+  .homepage h2 {
+    font-size: 22px; }
+  .homepage ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap; }
+    .homepage ul li {
+      flex: 1;
+      flex-basis: 50%;
+      width: 50%; }
+    .homepage ul a {
+      color: #ffffff;
+      background-color: rgba(255, 255, 255, 0.15);
+      border-radius: 6px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      margin: 30px;
+      padding: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      transition: background-color 0.2s ease-out; }
+      .homepage ul a:hover {
+        background-color: rgba(255, 255, 255, 0.3); }
+
+body {
+  margin: 0;
+  height: 100vh; }
+  body h1, body p {
+    margin: 0; }
+
+h1 {
+  font-size: calc(100vh * 0.02016); }
+
+.flyer {
+  display: flex;
+  height: 100%; }
+  .flyer__right {
+    width: calc(100vw * 0.27936);
+    padding: calc(100vh * 0.02823) calc(100vw * 0.02419) calc(100vh * 0.02823) calc(100vw * 0.02566);
+    background-image: linear-gradient(172deg, #0D258D 0%, #253EA7 84%, #253EA7 84%);
+    color: #ffffff;
+    font-weight: 300; }
+    .flyer__right__header {
+      padding-right: calc(100vw * 0.10262);
+      padding-bottom: calc(100vh * 0.03629);
+      margin-bottom: calc(100vh * 0.02419);
+      font-family: "Archia", sans-serif;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+      line-height: 1.8; }
+      .flyer__right__header img {
+        width: calc(100vw * 0.11117);
+        margin-bottom: calc(100vh * 0.01815); }
+      .flyer__right__header p {
+        font-size: calc(100vh * 0.01411); }
+    .flyer__right__team h1 {
+      position: relative; }
+      .flyer__right__team h1::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: calc(-1 * calc(100vw * 0.02566));
+        height: 100%;
+        width: calc(calc(100vw * 0.02566) / 4);
+        background: #e5f4f9; }
+
 /*********************************************
  * GLOBAL STYLES
  *********************************************/
@@ -320,3 +399,9 @@
 @media print {
   .backgrounds {
     background-color: #11205E; } }
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif; }
+  body * {
+    box-sizing: border-box; }

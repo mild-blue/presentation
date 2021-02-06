@@ -1,0 +1,17 @@
+@import "definitions/fonts";
+@import "definitions/colors";
+
+// Pages
+@import "pages/homepage";
+@import "pages/flyer";
+@import "pages/presentation";
+
+// Reset
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+
+  * {
+    box-sizing: border-box;
+  }
+}

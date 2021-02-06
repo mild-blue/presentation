@@ -155,7 +155,7 @@ gulp.task('plugins', () => {
     } ));
 })
 
-gulp.task('css-mildblue', () => gulp.src(['./css/theme/mildblue/*.{sass,scss}'])
+gulp.task('css-mildblue', () => gulp.src(['./css/theme/mildblue/mildblue.scss'])
         .pipe(sass())
         .pipe(gulp.dest('./dist/theme/mildblue')))
 
@@ -282,6 +282,7 @@ gulp.task('serve', () => {
 
     gulp.watch([
         'css/theme/mildblue/*.{sass,scss}',
+        'css/theme/mildblue/**/*.{sass,scss}',
     ], gulp.series('css-mildblue', 'reload'))
 
     gulp.watch([

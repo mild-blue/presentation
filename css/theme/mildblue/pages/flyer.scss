@@ -1,0 +1,101 @@
+$a4-width: 3508px;
+$a4-height: 2480px;
+$right-side-a4-width: 980px;
+
+// Calculated sizes in proportion to A4
+$right-side--width: percentage($right-side-a4-width / $a4-width) / 100%;
+$right-side--width: calc(100vw * #{$right-side--width});
+
+$right-side--padding-top: percentage(70px / $a4-height) / 100%;
+$right-side--padding-top: calc(100vh * #{$right-side--padding-top});
+
+$right-side--padding-right: percentage(60px / $a4-height) / 100%;
+$right-side--padding-right: calc(100vw * #{$right-side--padding-right});
+
+$right-side--padding-bottom: percentage(70px / $a4-height) / 100%;
+$right-side--padding-bottom: calc(100vh * #{$right-side--padding-bottom});
+
+$right-side--padding-left: percentage(90px / $a4-width) / 100%;
+$right-side--padding-left: calc(100vw * #{$right-side--padding-left});
+
+$right-side-header--padding-right: percentage(360px / $a4-width) / 100%;
+$right-side-header--padding-right: calc(100vw * #{$right-side-header--padding-right});
+
+$right-side-header--padding-bottom: percentage(90px / $a4-height) / 100%;
+$right-side-header--padding-bottom: calc(100vh * #{$right-side-header--padding-bottom});
+
+$right-side-header--margin-bottom: percentage(60px / $a4-height) / 100%;
+$right-side-header--margin-bottom: calc(100vh * #{$right-side-header--margin-bottom});
+
+$right-side-header--font-size: percentage(35px / $a4-height) / 100%;
+$right-side-header--font-size: calc(100vh * #{$right-side-header--font-size});
+
+$logo--width: percentage(390px / $a4-width) / 100%;
+$logo--width: calc(100vw * #{$logo--width});
+
+$logo--margin-bottom: percentage(45px / $a4-height) / 100%;
+$logo--margin-bottom: calc(100vh * #{$logo--margin-bottom});
+
+$h1--font-size: percentage(50px / $a4-height) / 100%;
+$h1--font-size: calc(100vh * #{$h1--font-size});
+
+body {
+  margin: 0;
+  height: 100vh;
+
+  h1, p {
+    margin: 0;
+  }
+}
+
+h1 {
+  font-size: $h1--font-size;
+}
+
+.flyer {
+  display: flex;
+  height: 100%;
+
+  &__right {
+    width: $right-side--width;
+    padding: $right-side--padding-top $right-side--padding-right $right-side--padding-bottom $right-side--padding-left;
+    background-image: linear-gradient(172deg, #0D258D 0%, #253EA7 84%, #253EA7 84%);
+
+    color: $white;
+    font-weight: 300;
+
+    &__header {
+      padding-right: $right-side-header--padding-right;
+      padding-bottom: $right-side-header--padding-bottom;
+      margin-bottom: $right-side-header--margin-bottom;
+      font-family: "Archia", sans-serif;
+      border-bottom: 1px solid rgba($white, 0.5);
+      line-height: 1.8;
+
+      img {
+        width: $logo--width;
+        margin-bottom: $logo--margin-bottom;
+      }
+
+      p {
+        font-size: $right-side-header--font-size;
+      }
+    }
+
+    &__team {
+      h1 {
+        position: relative;
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: calc(-1 * #{$right-side--padding-left});
+          height: 100%;
+          width: calc(#{$right-side--padding-left} / 4);
+          background: $light-blue;
+        }
+      }
+    }
+  }
+}
