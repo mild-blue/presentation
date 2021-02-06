@@ -1,0 +1,23 @@
+// Mild Blue fonts & colors
+@import "fonts";
+@import "colors";
+
+// Default mixins and settings -----------------
+@import "../template/mixins";
+@import "../template/settings";
+// ---------------------------------------------
+
+// Override theme settings (see ../template/settings.scss)
+$backgroundColor: $dark-blue;
+$mainFont: 'Poppins', sans-serif;
+$linkColor: #ffffff;
+$linkColorHover: lighten($linkColor, 20%);
+$headingFont: 'Archia', sans-serif;
+$headingTextShadow: none;
+$headingLetterSpacing: -0.03em;
+$headingTextTransform: none;
+$headingFontWeight: 900;
+
+// Theme template ------------------------------
+@import "../template/theme";
+// ---------------------------------------------

@@ -155,6 +155,10 @@ gulp.task('plugins', () => {
     } ));
 })
 
+gulp.task('css-mildblue', () => gulp.src(['./css/theme/mildblue/*.{sass,scss}'])
+        .pipe(sass())
+        .pipe(gulp.dest('./dist/theme/mildblue')))
+
 gulp.task('css-themes', () => gulp.src(['./css/theme/source/*.{sass,scss}'])
         .pipe(sass())
         .pipe(gulp.dest('./dist/theme')))
@@ -166,7 +170,7 @@ gulp.task('css-core', () => gulp.src(['css/reveal.scss'])
     .pipe(header(banner))
     .pipe(gulp.dest('./dist')))
 
-gulp.task('css', gulp.parallel('css-themes', 'css-core'))
+gulp.task('css', gulp.parallel('css-mildblue', 'css-themes', 'css-core'))
 
 gulp.task('qunit', () => {
 
@@ -275,6 +279,10 @@ gulp.task('serve', () => {
     gulp.watch(['js/**'], gulp.series('js', 'reload', 'test'))
 
     gulp.watch(['plugin/**/plugin.js'], gulp.series('plugins', 'reload'))
+
+    gulp.watch([
+        'css/theme/mildblue/*.{sass,scss}',
+    ], gulp.series('css-mildblue', 'reload'))
 
     gulp.watch([
         'css/theme/source/*.{sass,scss}',
