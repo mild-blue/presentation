@@ -39,22 +39,51 @@ $logo--margin-bottom: calc(100vh * #{$logo--margin-bottom});
 $h1--font-size: percentage(50px / $a4-height) / 100%;
 $h1--font-size: calc(100vh * #{$h1--font-size});
 
-body {
-  margin: 0;
-  height: 100vh;
+$left-side--background-height: percentage(121px / $a4-height) / 100%;
+$left-side--background-height: calc(100vh * #{$left-side--background-height});
 
-  h1, p {
-    margin: 0;
-  }
-}
+$left-side--padding-left: percentage(120px / $a4-width) / 100%;
+$left-side--padding-left: calc(100vw * #{$left-side--padding-left});
 
-h1 {
-  font-size: $h1--font-size;
-}
+$left-side-header-height: percentage(685px / $a4-height) / 100%;
+$left-side-header-height: calc(100vh * #{$left-side-header-height});
+
+$left-side-logo--width: percentage(420px / $a4-width) / 100%;
+$left-side-logo--width: calc(100vw * #{$left-side-logo--width});
+
+$project-gap: percentage(40px / $a4-width) / 100%;
+$project-gap: calc(100vw * #{$project-gap});
 
 .flyer {
   display: flex;
-  height: 100%;
+  margin: 0;
+  height: 100vh;
+
+  h1, h2, h3 {
+    margin: 0;
+    font-family: "Archia", sans-serif;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  h1 {
+    font-size: $h1--font-size;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      height: 100%;
+      background: $light-blue;
+    }
+  }
+
+  h3 {
+    color: $gray;
+  }
 
   &__right {
     width: $right-side--width;
@@ -84,18 +113,81 @@ h1 {
 
     &__team {
       h1 {
-        position: relative;
-
         &::before {
-          content: '';
-          position: absolute;
-          top: 0;
           left: calc(-1 * #{$right-side--padding-left});
-          height: 100%;
           width: calc(#{$right-side--padding-left} / 4);
-          background: $light-blue;
         }
       }
+    }
+  }
+
+  &__left {
+    flex: 1;
+    position: relative;
+    padding: $left-side--padding-left;
+    color: $dark-blue;
+
+    display: flex;
+    flex-direction: column;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: $left-side--background-height;
+      width: 100%;
+
+      background: url("/mild-blue/assets/flyer-background.png");
+      background-size: contain;
+    }
+
+    &__header {
+      display: flex;
+      padding-top: $left-side--background-height;
+      padding-bottom: $left-side--background-height;
+      height: $left-side-header-height;
+
+      .texts {
+        flex: 1;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+      }
+
+      img {
+        width: $left-side-logo--width;
+      }
+    }
+
+    h1 {
+      &::before {
+        top: 50%;
+        transform: translateY(-50%);
+        left: calc(-1.5 * #{$left-side--padding-left});
+        width: $left-side--padding-left;
+        height: $left-side--padding-left;
+      }
+    }
+  }
+
+  &__project {
+    margin: $project-gap;
+    padding: $project-gap;
+    box-shadow: calc(#{$project-gap}) calc(#{$project-gap}) 0 $light-blue;
+    border: 1px solid darken($light-blue, 10%);
+
+    flex-basis:calc( 50% - #{$project-gap} * 2);
+
+    &-list {
+      flex: 1;
+      display: flex;
+      flex-wrap: wrap;
+      margin-left: calc(-1 * #{$project-gap});
+      margin-right: calc(-1 * #{$project-gap});
+      margin-top: $project-gap;
     }
   }
 }

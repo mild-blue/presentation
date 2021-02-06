@@ -36,7 +36,7 @@
   font-style: normal; }
 
 .homepage {
-  background: #11205E;
+  background: #101f5f;
   color: #ffffff;
   padding: 30px;
   height: 100vh; }
@@ -73,18 +73,26 @@
       .homepage ul a:hover {
         background-color: rgba(255, 255, 255, 0.3); }
 
-body {
-  margin: 0;
-  height: 100vh; }
-  body h1, body p {
-    margin: 0; }
-
-h1 {
-  font-size: calc(100vh * 0.02016); }
-
 .flyer {
   display: flex;
-  height: 100%; }
+  margin: 0;
+  height: 100vh; }
+  .flyer h1, .flyer h2, .flyer h3 {
+    margin: 0;
+    font-family: "Archia", sans-serif; }
+  .flyer p {
+    margin: 0; }
+  .flyer h1 {
+    font-size: calc(100vh * 0.02016);
+    position: relative; }
+    .flyer h1::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      height: 100%;
+      background: #e5f4f9; }
+  .flyer h3 {
+    color: #a4a7b1; }
   .flyer__right {
     width: calc(100vw * 0.27936);
     padding: calc(100vh * 0.02823) calc(100vw * 0.02419) calc(100vh * 0.02823) calc(100vw * 0.02566);
@@ -103,22 +111,64 @@ h1 {
         margin-bottom: calc(100vh * 0.01815); }
       .flyer__right__header p {
         font-size: calc(100vh * 0.01411); }
-    .flyer__right__team h1 {
-      position: relative; }
-      .flyer__right__team h1::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: calc(-1 * calc(100vw * 0.02566));
+    .flyer__right__team h1::before {
+      left: calc(-1 * calc(100vw * 0.02566));
+      width: calc(calc(100vw * 0.02566) / 4); }
+  .flyer__left {
+    flex: 1;
+    position: relative;
+    padding: calc(100vw * 0.03421);
+    color: #101f5f;
+    display: flex;
+    flex-direction: column; }
+    .flyer__left::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: calc(100vh * 0.04879);
+      width: 100%;
+      background: url("/mild-blue/assets/flyer-background.png");
+      background-size: contain; }
+    .flyer__left__header {
+      display: flex;
+      padding-top: calc(100vh * 0.04879);
+      padding-bottom: calc(100vh * 0.04879);
+      height: calc(100vh * 0.27621); }
+      .flyer__left__header .texts {
+        flex: 1;
         height: 100%;
-        width: calc(calc(100vw * 0.02566) / 4);
-        background: #e5f4f9; }
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center; }
+      .flyer__left__header img {
+        width: calc(100vw * 0.11973); }
+    .flyer__left h1::before {
+      top: 50%;
+      transform: translateY(-50%);
+      left: calc(-1.5 * calc(100vw * 0.03421));
+      width: calc(100vw * 0.03421);
+      height: calc(100vw * 0.03421); }
+  .flyer__project {
+    margin: calc(100vw * 0.0114);
+    padding: calc(100vw * 0.0114);
+    box-shadow: calc(calc(100vw * 0.0114)) calc(calc(100vw * 0.0114)) 0 #e5f4f9;
+    border: 1px solid #bce2ef;
+    flex-basis: calc( 50% - calc(100vw * 0.0114) * 2); }
+    .flyer__project-list {
+      flex: 1;
+      display: flex;
+      flex-wrap: wrap;
+      margin-left: calc(-1 * calc(100vw * 0.0114));
+      margin-right: calc(-1 * calc(100vw * 0.0114));
+      margin-top: calc(100vw * 0.0114); }
 
 /*********************************************
  * GLOBAL STYLES
  *********************************************/
 :root {
-  --background-color: #11205E;
+  --background-color: #101f5f;
   --main-font: Poppins, sans-serif;
   --main-font-size: 40px;
   --main-color: #eee;
@@ -143,8 +193,8 @@ h1 {
   --selection-color: #fff; }
 
 .reveal-viewport {
-  background: #11205E;
-  background-color: #11205E; }
+  background: #101f5f;
+  background-color: #101f5f; }
 
 .reveal {
   font-family: "Poppins", sans-serif;
@@ -398,7 +448,7 @@ h1 {
  *********************************************/
 @media print {
   .backgrounds {
-    background-color: #11205E; } }
+    background-color: #101f5f; } }
 
 body {
   margin: 0;
