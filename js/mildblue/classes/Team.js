@@ -1,14 +1,21 @@
 import { ContentService } from '../services/ContentService';
+import { Translations } from '../language';
 
 export class Team {
 
   contentService = new ContentService();
   teamContainer = document.querySelector('[data-selector="team"]');
+  headingContainer = document.querySelector('[data-selector="team-heading"]');
 
   async init(photosDirectory, members, email, phone, locale) {
     console.log('Loaded team', members);
     if (!members) {
       return;
+    }
+
+    // Render heading
+    if(this.headingContainer) {
+      this.headingContainer.innerHTML = Translations[`our_team_${locale}`];
     }
 
     // Render team

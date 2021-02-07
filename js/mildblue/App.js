@@ -2,10 +2,10 @@ import { Company } from './classes/Company';
 import { Projects } from './classes/Projects';
 import { Team } from './classes/Team';
 import { ContentService } from './services/ContentService';
+import { AllowedLanguages } from './language';
 
 export class App {
 
-  allowedLanguages = ['en', 'cs'];
   contentService = new ContentService();
 
   company = new Company();
@@ -15,7 +15,7 @@ export class App {
   init() {
     // Get locale from hash and render content
     let locale = window.location.hash.replace('#', '');
-    locale = this.allowedLanguages.includes(locale) ? locale : 'en';
+    locale = AllowedLanguages.includes(locale) ? locale : 'en';
     this._renderContent(locale);
 
     // Listen for hash change

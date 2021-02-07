@@ -1,3 +1,5 @@
+import { Translations } from '../language';
+
 export class Company {
 
   // Texts
@@ -5,15 +7,15 @@ export class Company {
   mottoContainer = document.querySelector('[data-selector="motto"]');
   submottoContainer = document.querySelector('[data-selector="submotto"]');
 
-  // Email
-  emailContainer = document.querySelector('[data-selector="company-email"]');
+  // Contact
+  contactContainer = document.querySelector('[data-selector="company-contact"]');
 
   async init(company, locale) {
 
     // Email
     const companyEmail = company['email'];
-    if (companyEmail && this.emailContainer) {
-      this._renderEmail(companyEmail);
+    if (companyEmail && this.contactContainer) {
+      this._renderContact(companyEmail, locale);
     }
 
     // Texts
@@ -29,9 +31,10 @@ export class Company {
     }
   }
 
-  _renderEmail(email) {
-    const emailTemplate = `<a href="mailto:${email}">${email}</a>`;
-    this.emailContainer.insertAdjacentHTML('beforeend', emailTemplate);
+  _renderContact(email, locale) {
+    const template = `${Translations[`company_contact_${locale}`]} <a href="mailto:${email}">${email}</a>`;
+    this.contactContainer.innerHTML = '';
+    this.contactContainer.insertAdjacentHTML('beforeend', template);
   }
 
   _renderSlogan(content) {

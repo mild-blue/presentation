@@ -1,7 +1,10 @@
+import { Translations } from '../language';
+
 export class Projects {
 
   limit = 4;
   projectsListContainer = document.querySelector('[data-selector="projects"]');
+  headingContainer = document.querySelector('[data-selector="projects-heading"]');
 
   async init(projects, locale) {
     console.log('Loaded projects', projects);
@@ -9,6 +12,12 @@ export class Projects {
       return;
     }
 
+    // Render heading
+    if(this.headingContainer) {
+      this.headingContainer.innerHTML = Translations[`our_projects_${locale}`];
+    }
+
+    // Render projects
     if (this.projectsListContainer) {
       this.projectsListContainer.innerHTML = '';
       for (let i = 0; i < this.limit; i++) {
