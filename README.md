@@ -35,8 +35,10 @@ Copyright (C) 2011-2020 Hakim El Hattab, https://hakim.se
 
 You can start server via `npm run start`.
 
-## Mild-blue Folder
+## Mild-blue
 
-This folder contains markdowns for presentations.
-
-TODO
+Available links after running app locally: 
+* [Homepage](http://0.0.0.0:8000)
+* [Flyer CZ](http://0.0.0.0:8000/mild-blue/flyer.html#cs)
+* [Flyer EN](http://0.0.0.0:8000/mild-blue/flyer.html#en)
+* [Presentation](http://0.0.0.0:8000/mild-blue/presentation.html)
