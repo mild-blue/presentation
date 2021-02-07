@@ -26,7 +26,7 @@ export class App {
     // Render projects, media links and team
     const photosDirectory = `${this.contentService.apiUrl}/${company['people_dir']}/photos`;
     this.contentService.sourcesFilename = company['sources_filename'];
-    this.contentService.getTeam(company['people_dir']).then(members => this.team.init(photosDirectory, members, company['email']));
+    this.contentService.getTeam(company['people_dir']).then(members => this.team.init(photosDirectory, members, company['contact_person_email'], company['contact_person_phone_number']));
     this.contentService.getProjects(company['projects_dir']).then(projects => this.projects.init(projects));
   }
 }

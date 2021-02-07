@@ -83,8 +83,13 @@
   .flyer p {
     font-size: calc(100vh * 0.0121);
     margin: 0; }
+  .flyer a {
+    color: #253EA7;
+    text-decoration: none;
+    border-bottom: 0.5px solid;
+    font-weight: 600; }
   .flyer h1 {
-    font-size: calc(100vh * 0.02419);
+    font-size: calc(100vh * 0.02016);
     font-weight: 600;
     line-height: 2.16;
     position: relative; }
@@ -101,34 +106,56 @@
     padding: calc(100vh * 0.02823) calc(100vw * 0.02419) calc(100vh * 0.02823) calc(100vw * 0.02566);
     background-image: linear-gradient(172deg, #0D258D 0%, #253EA7 84%, #253EA7 84%);
     color: #ffffff;
-    font-weight: 300; }
+    font-weight: 300;
+    display: flex;
+    flex-direction: column; }
     .flyer__right__header {
-      padding-right: calc(100vw * 0.10262);
+      padding-right: calc(100vw * 0.08552);
       padding-bottom: calc(100vh * 0.03629);
       margin-bottom: calc(100vh * 0.02419);
       font-family: "Archia", sans-serif;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+      border-bottom: 1px solid #475db8;
       line-height: 1.8; }
       .flyer__right__header img {
         width: calc(100vw * 0.11117);
         margin-bottom: calc(100vh * 0.01815); }
-      .flyer__right__header p {
-        font-size: calc(100vh * 0.01411); }
-    .flyer__right__team h1 {
-      margin-bottom: calc(calc(100vh * 0.04435) / 3); }
-      .flyer__right__team h1::before {
-        left: calc(-1 * calc(100vw * 0.02566));
-        width: calc(calc(100vw * 0.02566) / 4); }
-    .flyer__right__team .team-member {
+      .flyer__right__header .slogan {
+        font-size: calc(100vh * 0.01613); }
+    .flyer__right__team {
+      flex: 1;
       display: flex;
-      margin-bottom: calc(100vh * 0.04435); }
-      .flyer__right__team .team-member img {
-        border-radius: 50%;
-        overflow: hidden;
-        width: calc(100vw * 0.03706);
-        margin-right: calc(calc(100vh * 0.04435) / 3); }
-      .flyer__right__team .team-member strong {
-        font-weight: 600; }
+      flex-direction: column; }
+      .flyer__right__team h1 {
+        margin-bottom: calc(calc(100vh * 0.04435) / 3); }
+        .flyer__right__team h1::before {
+          left: calc(-1 * calc(100vw * 0.02566));
+          width: calc(calc(100vw * 0.02566) / 4); }
+      .flyer__right__team .team {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly; }
+        .flyer__right__team .team-member {
+          display: flex; }
+          .flyer__right__team .team-member img {
+            border-radius: 50%;
+            overflow: hidden;
+            width: calc(100vw * 0.03706);
+            margin-right: calc(calc(100vh * 0.04435) / 3); }
+          .flyer__right__team .team-member strong {
+            font-weight: 600; }
+          .flyer__right__team .team-member a {
+            color: #ffffff;
+            font-weight: 300;
+            font-size: calc(100vh * 0.0121); }
+          .flyer__right__team .team-member .contact-info {
+            line-height: 1.8; }
+      .flyer__right__team .footer {
+        border-top: 1px solid #475db8;
+        padding-top: calc(calc(100vh * 0.04435) / 2);
+        margin-bottom: calc(100vh * 0.04435); }
+        .flyer__right__team .footer a {
+          color: #ffffff; }
   .flyer__left {
     flex: 1;
     position: relative;
@@ -163,7 +190,7 @@
     .flyer__left h1::before {
       top: 50%;
       transform: translateY(-50%);
-      left: calc(-1.5 * calc(100vw * 0.03421));
+      left: calc(-1.25 * calc(100vw * 0.03421));
       width: calc(100vw * 0.03421);
       height: calc(100vw * 0.03421); }
   .flyer__project {
@@ -185,11 +212,6 @@
     .flyer__project .desc {
       margin-top: calc(calc(100vw * 0.0114) / 2);
       line-height: 1.8; }
-      .flyer__project .desc a {
-        color: #253EA7;
-        text-decoration: none;
-        border-bottom: 1px solid;
-        font-weight: 600; }
     .flyer__project-list {
       flex: 1;
       display: flex;

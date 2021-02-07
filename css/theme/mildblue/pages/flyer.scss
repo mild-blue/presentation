@@ -18,7 +18,7 @@ $right-side--padding-bottom: calc(100vh * #{$right-side--padding-bottom});
 $right-side--padding-left: percentage(90px / $a4-width) / 100%;
 $right-side--padding-left: calc(100vw * #{$right-side--padding-left});
 
-$right-side-header--padding-right: percentage(360px / $a4-width) / 100%;
+$right-side-header--padding-right: percentage(300px / $a4-width) / 100%;
 $right-side-header--padding-right: calc(100vw * #{$right-side-header--padding-right});
 
 $right-side-header--padding-bottom: percentage(90px / $a4-height) / 100%;
@@ -27,17 +27,17 @@ $right-side-header--padding-bottom: calc(100vh * #{$right-side-header--padding-b
 $right-side-header--margin-bottom: percentage(60px / $a4-height) / 100%;
 $right-side-header--margin-bottom: calc(100vh * #{$right-side-header--margin-bottom});
 
-$right-side-header--font-size: percentage(35px / $a4-height) / 100%;
-$right-side-header--font-size: calc(100vh * #{$right-side-header--font-size});
-
 $logo--width: percentage(390px / $a4-width) / 100%;
 $logo--width: calc(100vw * #{$logo--width});
 
 $logo--margin-bottom: percentage(45px / $a4-height) / 100%;
 $logo--margin-bottom: calc(100vh * #{$logo--margin-bottom});
 
-$h1--font-size: percentage(60px / $a4-height) / 100%;
+$h1--font-size: percentage(50px / $a4-height) / 100%;
 $h1--font-size: calc(100vh * #{$h1--font-size});
+
+$slogan--font-size: percentage(40px / $a4-height) / 100%;
+$slogan--font-size: calc(100vh * #{$slogan--font-size});
 
 $p--font-size: percentage(30px / $a4-height) / 100%;
 $p--font-size: calc(100vh * #{$p--font-size});
@@ -66,6 +66,8 @@ $team-gap: calc(100vh * #{$team-gap});
 $letter-spacing: percentage(5px / $a4-width) / 100%;
 $letter-spacing: calc(100vw * #{$letter-spacing});
 
+$border-color: #475db8;
+
 .flyer {
   display: flex;
   margin: 0;
@@ -81,6 +83,13 @@ $letter-spacing: calc(100vw * #{$letter-spacing});
   p {
     font-size: $p--font-size;
     margin: 0;
+  }
+
+  a {
+    color: $blue;
+    text-decoration: none;
+    border-bottom: 0.5px solid;
+    font-weight: 600;
   }
 
   h1 {
@@ -112,12 +121,15 @@ $letter-spacing: calc(100vw * #{$letter-spacing});
     color: $white;
     font-weight: 300;
 
+    display: flex;
+    flex-direction: column;
+
     &__header {
       padding-right: $right-side-header--padding-right;
       padding-bottom: $right-side-header--padding-bottom;
       margin-bottom: $right-side-header--margin-bottom;
       font-family: "Archia", sans-serif;
-      border-bottom: 1px solid rgba($white, 0.5);
+      border-bottom: 1px solid $border-color;
       line-height: 1.8;
 
       img {
@@ -125,14 +137,18 @@ $letter-spacing: calc(100vw * #{$letter-spacing});
         margin-bottom: $logo--margin-bottom;
       }
 
-      p {
-        font-size: $right-side-header--font-size;
+      .slogan {
+        font-size: $slogan--font-size;
       }
     }
 
     // TEAM
 
     &__team {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+
       h1 {
         margin-bottom: calc(#{$team-gap} / 3);
 
@@ -143,10 +159,13 @@ $letter-spacing: calc(100vw * #{$letter-spacing});
       }
 
       .team {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
 
         &-member {
           display: flex;
-          margin-bottom: $team-gap;
 
           img {
             border-radius: 50%;
@@ -158,6 +177,26 @@ $letter-spacing: calc(100vw * #{$letter-spacing});
           strong {
             font-weight: 600;
           }
+
+          a {
+            color: $white;
+            font-weight: 300;
+            font-size: $p--font-size;
+          }
+
+          .contact-info {
+            line-height: 1.8;
+          }
+        }
+      }
+
+      .footer {
+        border-top: 1px solid $border-color;
+        padding-top: calc(#{$team-gap} / 2);
+        margin-bottom: $team-gap;
+
+        a {
+          color: $white;
         }
       }
     }
@@ -211,7 +250,7 @@ $letter-spacing: calc(100vw * #{$letter-spacing});
       &::before {
         top: 50%;
         transform: translateY(-50%);
-        left: calc(-1.5 * #{$left-side--padding-left});
+        left: calc(-1.25 * #{$left-side--padding-left});
         width: $left-side--padding-left;
         height: $left-side--padding-left;
       }
@@ -245,13 +284,6 @@ $letter-spacing: calc(100vw * #{$letter-spacing});
     .desc {
       margin-top: calc(#{$project-gap} / 2);
       line-height: 1.8;
-
-      a {
-        color: $blue;
-        text-decoration: none;
-        border-bottom: 1px solid;
-        font-weight: 600;
-      }
     }
 
     &-list {

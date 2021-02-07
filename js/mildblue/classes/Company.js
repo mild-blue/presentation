@@ -30,10 +30,7 @@ export class Company {
   }
 
   _renderEmail(email) {
-    const emailTemplate = `<a href="mailto:${email}?subject=Contact from Mild Blue website">
-                              <h2>Contacts us by email</h2>
-                              <span>${email}</span>
-                           </a>`;
+    const emailTemplate = `<a href="mailto:${email}">${email}</a>`;
     this.emailContainer.insertAdjacentHTML('beforeend', emailTemplate);
   }
 
