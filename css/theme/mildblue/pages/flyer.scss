@@ -1,58 +1,63 @@
 $a4-width: 3508px;
 $a4-height: 2480px;
-$right-side-a4-width: 980px;
+$left-side-a4-width: 980px;
 
 // Calculated sizes in proportion to A4
-$right-side--width: percentage($right-side-a4-width / $a4-width) / 100%;
-$right-side--width: calc(100vw * #{$right-side--width});
+$left-side--width: percentage($left-side-a4-width / $a4-width) / 100%;
+$left-side--width: calc(100vw * #{$left-side--width});
 
-$right-side--padding-top: percentage(70px / $a4-height) / 100%;
-$right-side--padding-top: calc(100vh * #{$right-side--padding-top});
+$left-side--padding-top: percentage(70px / $a4-height) / 100%;
+$left-side--padding-top: calc(100vh * #{$left-side--padding-top});
 
-$right-side--padding-right: percentage(60px / $a4-height) / 100%;
-$right-side--padding-right: calc(100vw * #{$right-side--padding-right});
+$left-side--padding-right: percentage(60px / $a4-height) / 100%;
+$left-side--padding-right: calc(100vw * #{$left-side--padding-right});
 
-$right-side--padding-bottom: percentage(70px / $a4-height) / 100%;
-$right-side--padding-bottom: calc(100vh * #{$right-side--padding-bottom});
+$left-side--padding-bottom: percentage(70px / $a4-height) / 100%;
+$left-side--padding-bottom: calc(100vh * #{$left-side--padding-bottom});
 
-$right-side--padding-left: percentage(90px / $a4-width) / 100%;
-$right-side--padding-left: calc(100vw * #{$right-side--padding-left});
+$left-side--padding-left: percentage(90px / $a4-width) / 100%;
+$left-side--padding-left: calc(100vw * #{$left-side--padding-left});
 
-$right-side-header--padding-right: percentage(300px / $a4-width) / 100%;
-$right-side-header--padding-right: calc(100vw * #{$right-side-header--padding-right});
+$left-side-header--padding-right: percentage(300px / $a4-width) / 100%;
+$left-side-header--padding-right: calc(100vw * #{$left-side-header--padding-right});
 
-$right-side-header--padding-bottom: percentage(90px / $a4-height) / 100%;
-$right-side-header--padding-bottom: calc(100vh * #{$right-side-header--padding-bottom});
+$left-side-header--padding-bottom: percentage(90px / $a4-height) / 100%;
+$left-side-header--padding-bottom: calc(100vh * #{$left-side-header--padding-bottom});
 
-$right-side-header--margin-bottom: percentage(60px / $a4-height) / 100%;
-$right-side-header--margin-bottom: calc(100vh * #{$right-side-header--margin-bottom});
+$left-side-header--margin-bottom: percentage(70px / $a4-height) / 100%;
+$left-side-header--margin-bottom: calc(100vh * #{$left-side-header--margin-bottom});
 
 $logo--width: percentage(390px / $a4-width) / 100%;
 $logo--width: calc(100vw * #{$logo--width});
 
-$logo--margin-bottom: percentage(45px / $a4-height) / 100%;
+$logo--margin-bottom: percentage(20px / $a4-height) / 100%;
 $logo--margin-bottom: calc(100vh * #{$logo--margin-bottom});
 
 $h1--font-size: percentage(50px / $a4-height) / 100%;
 $h1--font-size: calc(100vh * #{$h1--font-size});
 
-$slogan--font-size: percentage(40px / $a4-height) / 100%;
-$slogan--font-size: calc(100vh * #{$slogan--font-size});
-
 $p--font-size: percentage(30px / $a4-height) / 100%;
 $p--font-size: calc(100vh * #{$p--font-size});
 
-$left-side--background-height: percentage(121px / $a4-height) / 100%;
-$left-side--background-height: calc(100vh * #{$left-side--background-height});
+// Top left corner
+$slogan--font-size: percentage(45px / $a4-height) / 100%;
+$slogan--font-size: calc(100vh * #{$slogan--font-size});
 
-$left-side--padding-left: percentage(120px / $a4-width) / 100%;
-$left-side--padding-left: calc(100vw * #{$left-side--padding-left});
+// Big heading on the right side
+$motto--font-size: percentage(75px / $a4-height) / 100%;
+$motto--font-size: calc(100vh * #{$motto--font-size});
 
-$left-side-header-height: percentage(685px / $a4-height) / 100%;
-$left-side-header-height: calc(100vh * #{$left-side-header-height});
+$right-side--background-height: percentage(121px / $a4-height) / 100%;
+$right-side--background-height: calc(100vh * #{$right-side--background-height});
 
-$left-side-logo--width: percentage(420px / $a4-width) / 100%;
-$left-side-logo--width: calc(100vw * #{$left-side-logo--width});
+$right-side--padding-left: percentage(120px / $a4-width) / 100%;
+$right-side--padding-left: calc(100vw * #{$right-side--padding-left});
+
+$right-side-header-height: percentage(550px / $a4-height) / 100%;
+$right-side-header-height: calc(100vh * #{$right-side-header-height});
+
+$right-side-logo--width: percentage(420px / $a4-width) / 100%;
+$right-side-logo--width: calc(100vw * #{$right-side-logo--width});
 
 $project-gap: percentage(40px / $a4-width) / 100%;
 $project-gap: calc(100vw * #{$project-gap});
@@ -63,7 +68,7 @@ $team-img--width: calc(100vw * #{$team-img--width});
 $team-gap: percentage(110px / $a4-height) / 100%;
 $team-gap: calc(100vh * #{$team-gap});
 
-$letter-spacing: percentage(5px / $a4-width) / 100%;
+$letter-spacing: percentage(2px / $a4-width) / 100%;
 $letter-spacing: calc(100vw * #{$letter-spacing});
 
 $border-color: #475db8;
@@ -72,12 +77,12 @@ $border-color: #475db8;
   display: flex;
   margin: 0;
   height: 100vh;
+  font-family: $font-family-secondary;
 
   // BASICS
 
   h1, h2, h3 {
     margin: 0;
-    font-family: "Archia", sans-serif;
   }
 
   p {
@@ -111,11 +116,11 @@ $border-color: #475db8;
     color: $gray;
   }
 
-  // RIGHT SIDE
+  // LEFT SIDE
 
-  &__right {
-    width: $right-side--width;
-    padding: $right-side--padding-top $right-side--padding-right $right-side--padding-bottom $right-side--padding-left;
+  &__left {
+    width: $left-side--width;
+    padding: $left-side--padding-top $left-side--padding-right $left-side--padding-bottom $left-side--padding-left;
     background-image: linear-gradient(172deg, #0D258D 0%, #253EA7 84%, #253EA7 84%);
 
     color: $white;
@@ -125,12 +130,11 @@ $border-color: #475db8;
     flex-direction: column;
 
     &__header {
-      padding-right: $right-side-header--padding-right;
-      padding-bottom: $right-side-header--padding-bottom;
-      margin-bottom: $right-side-header--margin-bottom;
-      font-family: "Archia", sans-serif;
+      padding-right: $left-side-header--padding-right;
+      padding-bottom: $left-side-header--padding-bottom;
+      margin-bottom: $left-side-header--margin-bottom;
       border-bottom: 1px solid $border-color;
-      line-height: 1.8;
+      line-height: 1.6;
 
       img {
         width: $logo--width;
@@ -153,8 +157,8 @@ $border-color: #475db8;
         margin-bottom: calc(#{$team-gap} / 3);
 
         &::before {
-          left: calc(-1 * #{$right-side--padding-left});
-          width: calc(#{$right-side--padding-left} / 4);
+          left: calc(-1 * #{$left-side--padding-left});
+          width: calc(#{$left-side--padding-left} / 4);
         }
       }
 
@@ -162,7 +166,8 @@ $border-color: #475db8;
         flex: 1;
         display: flex;
         flex-direction: column;
-        justify-content: space-evenly;
+        justify-content: space-between;
+        padding: calc(#{$team-gap} / 2) 0;
 
         &-member {
           display: flex;
@@ -184,6 +189,11 @@ $border-color: #475db8;
             font-size: $p--font-size;
           }
 
+          &__desc {
+            line-height: 1.6;
+            font-weight: 400;
+          }
+
           .contact-info {
             line-height: 1.8;
           }
@@ -193,7 +203,9 @@ $border-color: #475db8;
       .footer {
         border-top: 1px solid $border-color;
         padding-top: calc(#{$team-gap} / 2);
-        margin-bottom: $team-gap;
+        margin-bottom: calc(#{$team-gap} / 1.5);
+        line-height: 1.6;
+        font-size: calc(#{$p--font-size} * 0.8);
 
         a {
           color: $white;
@@ -202,12 +214,12 @@ $border-color: #475db8;
     }
   }
 
-  // LEFT SIDE
+  // RIGHT SIDE
 
-  &__left {
+  &__right {
     flex: 1;
     position: relative;
-    padding: $left-side--padding-left;
+    padding: $right-side--padding-left;
     color: $dark-blue;
 
     display: flex;
@@ -218,7 +230,7 @@ $border-color: #475db8;
       position: absolute;
       top: 0;
       left: 0;
-      height: $left-side--background-height;
+      height: $right-side--background-height;
       width: 100%;
 
       background: url("/mild-blue/assets/flyer-background.png");
@@ -227,21 +239,31 @@ $border-color: #475db8;
 
     &__header {
       display: flex;
-      padding-top: $left-side--background-height;
-      padding-bottom: $left-side--background-height;
-      height: $left-side-header-height;
+      padding-top: calc(#{$right-side--background-height} / 4);
+      margin-bottom: calc(#{$right-side--background-height} / 2);
+      height: $right-side-header-height;
 
       .texts {
         flex: 1;
         height: 100%;
         display: flex;
         flex-direction: column;
-        justify-content: space-around;
+        justify-content: space-between;
         align-items: center;
+
+        .title {
+          font-size: $motto--font-size;
+          font-weight: 300;
+          line-height: 1.6;
+        }
+
+        .subtitle {
+          line-height: 1.6;
+        }
       }
 
       img {
-        width: $left-side-logo--width;
+        width: $right-side-logo--width;
         margin: 0 $team-img--width;
       }
     }
@@ -250,9 +272,9 @@ $border-color: #475db8;
       &::before {
         top: 50%;
         transform: translateY(-50%);
-        left: calc(-1.25 * #{$left-side--padding-left});
-        width: $left-side--padding-left;
-        height: $left-side--padding-left;
+        left: calc(-1.25 * #{$right-side--padding-left});
+        width: $right-side--padding-left;
+        height: $right-side--padding-left;
       }
     }
   }
@@ -261,14 +283,14 @@ $border-color: #475db8;
 
   &__project {
     margin: $project-gap;
-    padding: $project-gap;
-    box-shadow: calc(#{$project-gap}) calc(#{$project-gap}) 0 $light-blue;
+    padding: $project-gap $project-gap calc(#{$project-gap} * 1.5);
+    box-shadow: #{$project-gap} #{$project-gap} 0 $light-blue;
     border: 1px solid darken($light-blue, 10%);
 
-    flex-basis:calc( 50% - #{$project-gap} * 2);
+    flex-basis: calc(50% - #{$project-gap} * 2);
 
-    span, strong {
-      font-family: "Archia", sans-serif;
+    strong {
+      font-size: calc(#{$p--font-size} * 1.4);
     }
 
     span {
@@ -276,13 +298,13 @@ $border-color: #475db8;
       color: $gray;
       letter-spacing: $letter-spacing;
       font-weight: 700;
-      margin-top: calc(#{$project-gap} / 4);
+      margin-top: calc(#{$project-gap} / 1.5);
       display: block;
       font-size: calc(0.8 * #{$p--font-size});
     }
 
     .desc {
-      margin-top: calc(#{$project-gap} / 2);
+      margin-top: calc(#{$project-gap});
       line-height: 1.8;
     }
 
@@ -292,7 +314,7 @@ $border-color: #475db8;
       flex-wrap: wrap;
       margin-left: calc(-1 * #{$project-gap});
       margin-right: calc(-1 * #{$project-gap});
-      margin-top: $project-gap;
+      margin-top: calc(#{$project-gap} / 2);
     }
   }
 }
