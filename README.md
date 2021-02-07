@@ -42,3 +42,12 @@ Available links after running app locally:
 * [Flyer CZ](http://0.0.0.0:8000/mild-blue/flyer.html#cs)
 * [Flyer EN](http://0.0.0.0:8000/mild-blue/flyer.html#en)
 * [Presentation](http://0.0.0.0:8000/mild-blue/presentation.html)
+
+To generate PDF:
+1. Open the Flyer link locally
+2. Open the in-browser print dialog (CTRL/CMD+P).
+3. Change the Destination setting to Save as PDF.
+4. Change the Layout to Landscape.
+5. Change the Margins to None.
+6. Enable the Background graphics option.
+7. Click Save 🎉
