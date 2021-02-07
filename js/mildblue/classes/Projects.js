@@ -18,12 +18,14 @@ export class Projects {
   }
 
   _renderProjectListItem(project) {
-    const website = project['website'] ? `<p>Demo: <a href="${project['website']}">${project['website'].replace(/https:\/\/|http:\/\/|www\./gi, '')}</a>.</p>` : '';
+    const website = project['website'] ? `<p>Demo: <a href="${project['website']}">${project['website'].replace(/https:\/\/|http:\/\/|www\./gi, '')}</a></p>` : '';
     return `<div class="flyer__project">
-      <h2>${project['name_en']}</h2>
-      <h3>${project['subtitle_en']}</h3>
-      <p>${project['desc_en']}</p>
-      ${website}
+      <p><strong>${project['name_en']}</strong></p>
+      <p><span>${project['subtitle_en']}</span></p>
+      <div class="desc">
+        <p>${project['desc_en']}</p>
+        ${website}
+      </div>
     </div>`;
   }
 }

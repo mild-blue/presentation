@@ -36,8 +36,11 @@ $logo--width: calc(100vw * #{$logo--width});
 $logo--margin-bottom: percentage(45px / $a4-height) / 100%;
 $logo--margin-bottom: calc(100vh * #{$logo--margin-bottom});
 
-$h1--font-size: percentage(50px / $a4-height) / 100%;
+$h1--font-size: percentage(60px / $a4-height) / 100%;
 $h1--font-size: calc(100vh * #{$h1--font-size});
+
+$p--font-size: percentage(30px / $a4-height) / 100%;
+$p--font-size: calc(100vh * #{$p--font-size});
 
 $left-side--background-height: percentage(121px / $a4-height) / 100%;
 $left-side--background-height: calc(100vh * #{$left-side--background-height});
@@ -54,10 +57,21 @@ $left-side-logo--width: calc(100vw * #{$left-side-logo--width});
 $project-gap: percentage(40px / $a4-width) / 100%;
 $project-gap: calc(100vw * #{$project-gap});
 
+$team-img--width: percentage(130px / $a4-width) / 100%;
+$team-img--width: calc(100vw * #{$team-img--width});
+
+$team-gap: percentage(110px / $a4-height) / 100%;
+$team-gap: calc(100vh * #{$team-gap});
+
+$letter-spacing: percentage(5px / $a4-width) / 100%;
+$letter-spacing: calc(100vw * #{$letter-spacing});
+
 .flyer {
   display: flex;
   margin: 0;
   height: 100vh;
+
+  // BASICS
 
   h1, h2, h3 {
     margin: 0;
@@ -65,11 +79,14 @@ $project-gap: calc(100vw * #{$project-gap});
   }
 
   p {
+    font-size: $p--font-size;
     margin: 0;
   }
 
   h1 {
     font-size: $h1--font-size;
+    font-weight: 600;
+    line-height: 2.16;
     position: relative;
 
     &::before {
@@ -84,6 +101,8 @@ $project-gap: calc(100vw * #{$project-gap});
   h3 {
     color: $gray;
   }
+
+  // RIGHT SIDE
 
   &__right {
     width: $right-side--width;
@@ -111,15 +130,40 @@ $project-gap: calc(100vw * #{$project-gap});
       }
     }
 
+    // TEAM
+
     &__team {
       h1 {
+        margin-bottom: calc(#{$team-gap} / 3);
+
         &::before {
           left: calc(-1 * #{$right-side--padding-left});
           width: calc(#{$right-side--padding-left} / 4);
         }
       }
+
+      .team {
+
+        &-member {
+          display: flex;
+          margin-bottom: $team-gap;
+
+          img {
+            border-radius: 50%;
+            overflow: hidden;
+            width: $team-img--width;
+            margin-right: calc(#{$team-gap} / 3);
+          }
+
+          strong {
+            font-weight: 600;
+          }
+        }
+      }
     }
   }
+
+  // LEFT SIDE
 
   &__left {
     flex: 1;
@@ -159,6 +203,7 @@ $project-gap: calc(100vw * #{$project-gap});
 
       img {
         width: $left-side-logo--width;
+        margin: 0 $team-img--width;
       }
     }
 
@@ -173,6 +218,8 @@ $project-gap: calc(100vw * #{$project-gap});
     }
   }
 
+  // PROJECTS
+
   &__project {
     margin: $project-gap;
     padding: $project-gap;
@@ -180,6 +227,32 @@ $project-gap: calc(100vw * #{$project-gap});
     border: 1px solid darken($light-blue, 10%);
 
     flex-basis:calc( 50% - #{$project-gap} * 2);
+
+    span, strong {
+      font-family: "Archia", sans-serif;
+    }
+
+    span {
+      text-transform: uppercase;
+      color: $gray;
+      letter-spacing: $letter-spacing;
+      font-weight: 700;
+      margin-top: calc(#{$project-gap} / 4);
+      display: block;
+      font-size: calc(0.8 * #{$p--font-size});
+    }
+
+    .desc {
+      margin-top: calc(#{$project-gap} / 2);
+      line-height: 1.8;
+
+      a {
+        color: $blue;
+        text-decoration: none;
+        border-bottom: 1px solid;
+        font-weight: 600;
+      }
+    }
 
     &-list {
       flex: 1;

@@ -81,9 +81,12 @@
     margin: 0;
     font-family: "Archia", sans-serif; }
   .flyer p {
+    font-size: calc(100vh * 0.0121);
     margin: 0; }
   .flyer h1 {
-    font-size: calc(100vh * 0.02016);
+    font-size: calc(100vh * 0.02419);
+    font-weight: 600;
+    line-height: 2.16;
     position: relative; }
     .flyer h1::before {
       content: '';
@@ -111,9 +114,21 @@
         margin-bottom: calc(100vh * 0.01815); }
       .flyer__right__header p {
         font-size: calc(100vh * 0.01411); }
-    .flyer__right__team h1::before {
-      left: calc(-1 * calc(100vw * 0.02566));
-      width: calc(calc(100vw * 0.02566) / 4); }
+    .flyer__right__team h1 {
+      margin-bottom: calc(calc(100vh * 0.04435) / 3); }
+      .flyer__right__team h1::before {
+        left: calc(-1 * calc(100vw * 0.02566));
+        width: calc(calc(100vw * 0.02566) / 4); }
+    .flyer__right__team .team-member {
+      display: flex;
+      margin-bottom: calc(100vh * 0.04435); }
+      .flyer__right__team .team-member img {
+        border-radius: 50%;
+        overflow: hidden;
+        width: calc(100vw * 0.03706);
+        margin-right: calc(calc(100vh * 0.04435) / 3); }
+      .flyer__right__team .team-member strong {
+        font-weight: 600; }
   .flyer__left {
     flex: 1;
     position: relative;
@@ -143,7 +158,8 @@
         justify-content: space-around;
         align-items: center; }
       .flyer__left__header img {
-        width: calc(100vw * 0.11973); }
+        width: calc(100vw * 0.11973);
+        margin: 0 calc(100vw * 0.03706); }
     .flyer__left h1::before {
       top: 50%;
       transform: translateY(-50%);
@@ -156,6 +172,24 @@
     box-shadow: calc(calc(100vw * 0.0114)) calc(calc(100vw * 0.0114)) 0 #e5f4f9;
     border: 1px solid #bce2ef;
     flex-basis: calc( 50% - calc(100vw * 0.0114) * 2); }
+    .flyer__project span, .flyer__project strong {
+      font-family: "Archia", sans-serif; }
+    .flyer__project span {
+      text-transform: uppercase;
+      color: #a4a7b1;
+      letter-spacing: calc(100vw * 0.00143);
+      font-weight: 700;
+      margin-top: calc(calc(100vw * 0.0114) / 4);
+      display: block;
+      font-size: calc(0.8 * calc(100vh * 0.0121)); }
+    .flyer__project .desc {
+      margin-top: calc(calc(100vw * 0.0114) / 2);
+      line-height: 1.8; }
+      .flyer__project .desc a {
+        color: #253EA7;
+        text-decoration: none;
+        border-bottom: 1px solid;
+        font-weight: 600; }
     .flyer__project-list {
       flex: 1;
       display: flex;
