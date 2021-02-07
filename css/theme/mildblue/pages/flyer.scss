@@ -9,7 +9,7 @@ $left-side--width: calc(100vw * #{$left-side--width});
 $left-side--padding-top: percentage(70px / $a4-height) / 100%;
 $left-side--padding-top: calc(100vh * #{$left-side--padding-top});
 
-$left-side--padding-right: percentage(60px / $a4-height) / 100%;
+$left-side--padding-right: percentage(45px / $a4-height) / 100%;
 $left-side--padding-right: calc(100vw * #{$left-side--padding-right});
 
 $left-side--padding-bottom: percentage(70px / $a4-height) / 100%;
@@ -40,7 +40,7 @@ $p--font-size: percentage(30px / $a4-height) / 100%;
 $p--font-size: calc(100vh * #{$p--font-size});
 
 // Top left corner
-$slogan--font-size: percentage(45px / $a4-height) / 100%;
+$slogan--font-size: percentage(40px / $a4-height) / 100%;
 $slogan--font-size: calc(100vh * #{$slogan--font-size});
 
 // Big heading on the right side

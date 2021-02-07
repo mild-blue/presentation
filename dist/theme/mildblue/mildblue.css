@@ -103,7 +103,7 @@
     color: #a4a7b1; }
   .flyer__left {
     width: calc(100vw * 0.27936);
-    padding: calc(100vh * 0.02823) calc(100vw * 0.02419) calc(100vh * 0.02823) calc(100vw * 0.02566);
+    padding: calc(100vh * 0.02823) calc(100vw * 0.01815) calc(100vh * 0.02823) calc(100vw * 0.02566);
     background-image: linear-gradient(172deg, #0D258D 0%, #253EA7 84%, #253EA7 84%);
     color: #ffffff;
     font-weight: 300;
@@ -119,7 +119,7 @@
         width: calc(100vw * 0.11117);
         margin-bottom: calc(100vh * 0.00806); }
       .flyer__left__header .slogan {
-        font-size: calc(100vh * 0.01815); }
+        font-size: calc(100vh * 0.01613); }
     .flyer__left__team {
       flex: 1;
       display: flex;
