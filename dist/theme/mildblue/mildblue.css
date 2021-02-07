@@ -150,7 +150,10 @@
             font-size: calc(100vh * 0.0121); }
           .flyer__left__team .team-member__desc {
             line-height: 1.6;
-            font-weight: 400; }
+            font-weight: 400;
+            display: flex;
+            flex-direction: column;
+            justify-content: center; }
           .flyer__left__team .team-member .contact-info {
             line-height: 1.8; }
       .flyer__left__team .footer {
@@ -187,8 +190,7 @@
         height: 100%;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
-        align-items: center; }
+        justify-content: space-between; }
         .flyer__right__header .texts .title {
           font-size: calc(100vh * 0.03024);
           font-weight: 300;
