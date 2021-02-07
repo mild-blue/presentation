@@ -5,21 +5,22 @@ export class Team {
   contentService = new ContentService();
   teamContainer = document.querySelector('[data-selector="team"]');
 
-  async init(photosDirectory, members, email, phone) {
+  async init(photosDirectory, members, email, phone, locale) {
     console.log('Loaded team', members);
     if (!members) {
       return;
     }
 
     // Render team
+    this.teamContainer.innerHTML = '';
     let showInfo = true; // just for the first member
     for (const m of members) {
-      this.teamContainer.insertAdjacentHTML('beforeend', this._renderMember(photosDirectory, m, showInfo, email, phone));
+      this.teamContainer.insertAdjacentHTML('beforeend', this._renderMember(photosDirectory, m, showInfo, email, phone, locale));
       showInfo = false; // cancel for others
     }
   }
 
-  _renderMember(photosDirectory, member, showInfo = false, email, phone) {
+  _renderMember(photosDirectory, member, showInfo = false, email, phone, locale) {
 
     const image = `${photosDirectory}/${member.key}.webp`;
     const contactInfo = showInfo && email && phone ? `<p class="contact-info"><a href="mailto:${email}">${email}</a><br>${this._formatPhoneNumber(phone)}</p>` : '';
@@ -29,7 +30,7 @@ export class Team {
               </div>
               <div class="team-member__desc">
                 <p><strong>${member.name}</strong></p>
-                <p>${member.title_en}</p>
+                <p>${member[`title_${locale}`]}</p>
                 ${contactInfo}
               </div>
             </div>`;

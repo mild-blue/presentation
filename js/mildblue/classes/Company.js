@@ -8,7 +8,7 @@ export class Company {
   // Email
   emailContainer = document.querySelector('[data-selector="company-email"]');
 
-  async init(company) {
+  async init(company, locale) {
 
     // Email
     const companyEmail = company['email'];
@@ -17,15 +17,15 @@ export class Company {
     }
 
     // Texts
-    if (company['slogan_en'] && this.sloganContainer) {
-      this._renderSlogan(company['slogan_en']);
+    if (company[`slogan_${locale}`] && this.sloganContainer) {
+      this._renderSlogan(company[`slogan_${locale}`]);
     }
-    if (company['motto_en'] && this.mottoContainer) {
-      this._renderMotto(company['motto_en']);
+    if (company[`motto_${locale}`] && this.mottoContainer) {
+      this._renderMotto(company[`motto_${locale}`]);
     }
 
-    if (company['submotto_en'] && this.submottoContainer) {
-      this._renderSubmotto(company['submotto_en']);
+    if (company[`submotto_${locale}`] && this.submottoContainer) {
+      this._renderSubmotto(company[`submotto_${locale}`]);
     }
   }
 
