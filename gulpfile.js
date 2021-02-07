@@ -299,7 +299,7 @@ gulp.task('serve', () => {
 
   gulp.watch(['*.html', '*.md'], gulp.series('reload'));
 
-  gulp.watch(['js/**', 'js/**/**'], gulp.series('js', 'reload', 'test'));
+  gulp.watch(['js/**', 'js/**/**'], gulp.series('js', 'reload'));
 
   gulp.watch(['plugin/**/plugin.js'], gulp.series('plugins', 'reload'));
 

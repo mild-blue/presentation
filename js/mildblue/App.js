@@ -25,11 +25,11 @@ export class App {
     // Render company info
     this.company.init(company);
 
-    // // Render projects, media links and team
+    // Render projects, media links and team
     // const photosDirectory = `${this.contentService.apiUrl}/${company['people_dir']}/photos`;
     // const linksImagesDirectory = `${this.contentService.apiUrl}/${company['links_dir']}/img`;
-    // this.contentService.sourcesFilename = company['sources_filename'];
-    // this.contentService.getProjects(company['projects_dir']).then(projects => this.projects.init(projects));
+    this.contentService.sourcesFilename = company['sources_filename'];
+    this.contentService.getProjects(company['projects_dir']).then(projects => this.projects.init(projects));
     // this.contentService.getLinks(company['links_dir']).then(links => this.links.init(linksImagesDirectory, links));
     // this.contentService.getTeam(company['people_dir']).then(members => this.team.init(photosDirectory, members, company['email']));
   }
