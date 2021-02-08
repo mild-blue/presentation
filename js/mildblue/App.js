@@ -8,11 +8,18 @@ export class App {
 
   contentService = new ContentService();
 
-  company = new Company();
-  team = new Team();
-  projects = new Projects();
+  company;
+  team;
+  projects;
 
-  init() {
+  init(options) {
+    // pass options to all elements
+    this.contentService = new ContentService(options);
+
+    this.company = new Company(options);
+    this.team = new Team(options);
+    this.projects = new Projects(options);
+
     // Get locale from hash and render content
     let locale = window.location.hash.replace('#', '');
     locale = AllowedLanguages.includes(locale) ? locale : 'en';

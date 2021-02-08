@@ -2,9 +2,15 @@ import { Translations } from '../language';
 
 export class Projects {
 
+  options;
+
   limit = 4;
   projectsListContainer = document.querySelector('[data-selector="projects"]');
   headingContainer = document.querySelector('[data-selector="projects-heading"]');
+
+  constructor(options) {
+    this.options = options;
+  }
 
   async init(projects, locale) {
     console.log('Loaded projects', projects);
@@ -18,6 +24,10 @@ export class Projects {
     }
 
     // Render projects
+    if(this.options.showCooperation !== undefined && this.options.showCooperation) {
+      this.limit = 3;
+    }
+
     if (this.projectsListContainer) {
       this.projectsListContainer.innerHTML = '';
       for (let i = 0; i < this.limit; i++) {

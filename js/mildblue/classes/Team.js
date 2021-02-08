@@ -3,9 +3,15 @@ import { Translations } from '../language';
 
 export class Team {
 
+  options;
+
   contentService = new ContentService();
   teamContainer = document.querySelector('[data-selector="team"]');
   headingContainer = document.querySelector('[data-selector="team-heading"]');
+
+  constructor(options) {
+    this.options = options;
+  }
 
   async init(photosDirectory, members, email, phone, locale) {
     console.log('Loaded team', members);
@@ -19,6 +25,10 @@ export class Team {
     }
 
     // Render team
+    if(this.options.team !== undefined && this.options.team.length > 0) {
+      members = members.filter(m => this.options.team.includes(m.key));
+    }
+
     this.teamContainer.innerHTML = '';
     let showInfo = true; // just for the first member
     for (const m of members) {
@@ -41,6 +51,14 @@ export class Team {
                 ${contactInfo}
               </div>
             </div>`;
+  }
+
+  _formatTitle(title) {
+    if(this.options.showCoFounderLabel !== undefined && !this.options.showCoFounderLabel) {
+      title.replace('/co-founder/g', '')
+    }
+
+    return title;
   }
 
   _formatPhoneNumber(phoneNumberString) {

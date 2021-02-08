@@ -39,8 +39,8 @@ You can start server via `npm run start`.
 
 Available links after running app locally: 
 * [Homepage](http://0.0.0.0:8000)
-* [Flyer CZ](http://0.0.0.0:8000/mild-blue/flyer.html#cs)
-* [Flyer EN](http://0.0.0.0:8000/mild-blue/flyer.html#en)
+* [Flyer CZ](http://0.0.0.0:8000/mild-blue/base.html#cs)
+* [Flyer EN](http://0.0.0.0:8000/mild-blue/base.html#en)
 * [Presentation](http://0.0.0.0:8000/mild-blue/presentation.html)
 
 To generate PDF:

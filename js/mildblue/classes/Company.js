@@ -2,6 +2,8 @@ import { Translations } from '../language';
 
 export class Company {
 
+  options;
+
   // Texts
   sloganContainer = document.querySelector('[data-selector="slogan"]');
   mottoContainer = document.querySelector('[data-selector="motto"]');
@@ -9,6 +11,10 @@ export class Company {
 
   // Contact
   contactContainer = document.querySelector('[data-selector="company-contact"]');
+
+  constructor(options) {
+    this.options = options;
+  }
 
   async init(company, locale) {
 
@@ -26,8 +32,10 @@ export class Company {
       this._renderMotto(company[`motto_${locale}`]);
     }
 
-    if (company[`submotto_${locale}`] && this.submottoContainer) {
-      this._renderSubmotto(company[`submotto_${locale}`]);
+    if(this.options.showSubtitle === undefined || this.options.showSubtitle) {
+      if (company[`submotto_${locale}`] && this.submottoContainer) {
+        this._renderSubmotto(company[`submotto_${locale}`]);
+      }
     }
   }
 
