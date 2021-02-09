@@ -48,7 +48,7 @@ export class Team {
               </div>
               <div class="team-member__desc">
                 <p><strong>${member.name}</strong></p>
-                <p>${member[`title_${locale}`]}</p>
+                <p>${this._formatTitle(member[`title_${locale}`])}</p>
                 ${contactInfo}
               </div>
             </div>`;
@@ -56,7 +56,7 @@ export class Team {
 
   _formatTitle(title) {
     if(this.options.showCoFounderLabel !== undefined && !this.options.showCoFounderLabel) {
-      title.replace('/co-founder/g', '')
+      title = title.replace(', co-founder', '')
     }
 
     return title;
