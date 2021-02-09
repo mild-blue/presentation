@@ -35,6 +35,13 @@ export class Projects {
         this.projectsListContainer.insertAdjacentHTML('beforeend', item);
       }
     }
+
+    // Render cooperation
+    if(this.options.showCooperation !== undefined && this.options.showCooperation) {
+      const texts = Translations[`cooperation_${locale}`];
+      const cooperation = this._renderCooperation(texts);
+      this.projectsListContainer.insertAdjacentHTML('beforeend', cooperation);
+    }
   }
 
   _renderProjectListItem(project, locale) {
@@ -45,6 +52,15 @@ export class Projects {
       <div class="desc">
         <p>${project[`desc_${locale}`]}</p>
         ${website}
+      </div>
+    </div>`;
+  }
+
+  _renderCooperation(cooperation) {
+    return `<div class="flyer__project">
+      <p><strong>${cooperation.title}</strong></p>
+      <div class="desc">
+        <p>${cooperation.content}</p>
       </div>
     </div>`;
   }

@@ -26,8 +26,8 @@ export class App {
     this._renderContent(locale);
 
     // Listen for hash change
-    window.removeEventListener('hashchange', this.init.bind(this));
-    window.addEventListener('hashchange', this.init.bind(this));
+    window.removeEventListener('hashchange', () => this.init(options));
+    window.addEventListener('hashchange', () => this.init(options));
   }
 
   async _renderContent(locale) {
