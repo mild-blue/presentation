@@ -29,6 +29,7 @@ export class Team {
       members = members.filter(m => this.options.team.includes(m.key));
     }
 
+    this.teamContainer.parentElement.classList.add(`size--${members.length}`);
     this.teamContainer.innerHTML = '';
     let showInfo = true; // just for the first member
     for (const m of members) {

@@ -1,4 +1,5 @@
 import { Translations } from '../language';
+import { MoreInfoType } from '../constants';
 
 export class Company {
 
@@ -19,10 +20,20 @@ export class Company {
   async init(company, locale) {
 
     // Email
-    const companyEmail = company['email'];
-    if (companyEmail && this.contactContainer) {
-      this._renderContact(companyEmail, locale);
+    if(this.contactContainer) {
+      let label = Translations[`company_contact_${locale}`];
+      let link = company['email'];
+
+      if(!link || (this.options.moreInfoType !== undefined && this.options.moreInfoType === MoreInfoType.Team)) {
+        label = Translations[`more_team_info_${locale}`]
+        link = 'https://mild.blue/#team';
+      }
+
+      if (link) {
+        this._renderContact(label, link);
+      }
     }
+
 
     // Texts
     if (company[`slogan_${locale}`] && this.sloganContainer) {
@@ -39,8 +50,9 @@ export class Company {
     }
   }
 
-  _renderContact(email, locale) {
-    const template = `${Translations[`company_contact_${locale}`]} <a href="mailto:${email}">${email}</a>`;
+  _renderContact(label, link) {
+    let template = `${label} <a href="${link}">${link}</a>`;
+
     this.contactContainer.innerHTML = '';
     this.contactContainer.insertAdjacentHTML('beforeend', template);
   }

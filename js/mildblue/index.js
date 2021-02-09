@@ -1,21 +1,5 @@
 import { App } from './App';
-
-// todo: Send options from HTML
-const BASE_OPTIONS = {
-  team: ['tomas', 'honza', 'marek', 'lukas', 'nasta', 'beta'],
-  projects: ['breviary', 'txm', 'datavid', 'ekg'],
-  showCooperation: false,
-  showSubtitle: true,
-  showCoFounderLabel: true
-}
-
-const EDWARDS_OPTIONS = {
-  team: ['tomas', 'honza', 'marek', 'lukas', 'beta'],
-  projects: ['txm', 'breviary', 'ekg'],
-  showCooperation: true,
-  showSubtitle: false,
-  showCoFounderLabel: false
-}
+import { BASE_OPTIONS, EDWARDS_OPTIONS } from './constants';
 
 document.addEventListener("DOMContentLoaded", function(event) {
 

@@ -57,7 +57,7 @@ export class Projects {
   }
 
   _renderCooperation(cooperation) {
-    return `<div class="flyer__project">
+    return `<div class="flyer__project cooperation">
       <p><strong>${cooperation.title}</strong></p>
       <div class="desc">
         <p>${cooperation.content}</p>
