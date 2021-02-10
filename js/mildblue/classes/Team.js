@@ -55,8 +55,9 @@ export class Team {
   }
 
   _formatTitle(title) {
+    console.log(title, this.options.showCoFounderLabel)
     if(this.options.showCoFounderLabel !== undefined && !this.options.showCoFounderLabel) {
-      title = title.replace(', co-founder', '')
+      title = title.replace(/, co-founder|& co-founder|co-founder/gi, '')
     }
 
     return title;

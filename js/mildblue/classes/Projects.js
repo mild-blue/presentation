@@ -45,7 +45,7 @@ export class Projects {
   }
 
   _renderProjectListItem(project, locale) {
-    const website = project['website'] ? `<p>Demo available at <a href="${project['website']}">${project['website'].replace(/https:\/\/|http:\/\/|www\./gi, '')}</a>.</p>` : '';
+    const website = project['website'] ? `<p>${Translations[`demo_${locale}`]} <a href="${project['website']}">${project['website'].replace(/https:\/\/|http:\/\/|www\./gi, '')}</a>.</p>` : '';
     return `<div class="flyer__project">
       <p><strong>${project[`name_${locale}`]}</strong></p>
       <p><span>${project[`subtitle_${locale}`]}</span></p>
