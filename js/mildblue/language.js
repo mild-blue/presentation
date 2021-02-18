@@ -17,6 +17,6 @@ export const Translations = {
     'title': 'Spolupráce s Edwards Lifesciences',
     'content': 'V Mild Blue vytváříme nástroje zlepšující péči o pacienty a zdravotnicvtí jako takové. Zapojujeme umělou inteligenci a strojové učení, abychom navázali tam, kde prostá úvaha či odborný úsudek končí. Nabízíme kombinaci znalostí medicíny, matematiky a softwarového inžnýrství a dokážeme dodat kompletní řešení na míru a v produkční kvalitě. Společně můžeme vytvořit nástroje, které budou prospěšné pro Vás, pro nás a především pro pacienty.'
   },
-  'demo_en': 'Demo available at',
-  'demo_cs': 'Demo dostupné na',
+  'demo_en': 'Demo and more information available at',
+  'demo_cs': 'Demo a další informace dostupné na',
 }
