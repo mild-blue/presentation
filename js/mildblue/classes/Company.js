@@ -26,7 +26,7 @@ export class Company {
 
       if(!link || (this.options.moreInfoType !== undefined && this.options.moreInfoType === MoreInfoType.Team)) {
         label = Translations[`more_team_info_${locale}`]
-        link = 'https://mild.blue/#team';
+        link = 'https://mild.blue/';
       }
 
       if (link) {
@@ -51,7 +51,7 @@ export class Company {
   }
 
   _renderContact(label, link) {
-    let template = `${label} <a href="${link}">${link}</a>`;
+    let template = `${label} <a href="${link}">${link}</a>.`;
 
     this.contactContainer.innerHTML = '';
     this.contactContainer.insertAdjacentHTML('beforeend', template);

@@ -36,7 +36,7 @@ Copyright (C) 2011-2020 Hakim El Hattab, https://hakim.se
 
 ## Reveal Installation
 
-1. Execute `npm run isntall`.
+1. Execute `npm run install` or `npm install`.
 
 You can start server via `npm run start`.
 
@@ -46,11 +46,11 @@ Available links after running app locally:
 
 * [Homepage](http://0.0.0.0:8000)
 * Basic Flyer:
-    - [CZ](http://0.0.0.0:8000/mild-blue/base.html#cs)
-    - [EN](http://0.0.0.0:8000/mild-blue/base.html#en)
+    - [CZ](http://0.0.0.0:8000/mild-blue/flyer/base.html#cs)
+    - [EN](http://0.0.0.0:8000/mild-blue/flyer/base.html#en)
 * Edwards Flyer:
-    - [CZ](http://0.0.0.0:8000/mild-blue/edwards.html#cs)
-    - [EN](http://0.0.0.0:8000/mild-blue/edwards.html#en)
+    - [CZ](http://0.0.0.0:8000/mild-blue/flyer/edwards.html#cs)
+    - [EN](http://0.0.0.0:8000/mild-blue/flyer/edwards.html#en)
 * [Presentation](http://0.0.0.0:8000/mild-blue/presentation.html)
 
 To generate PDF:
